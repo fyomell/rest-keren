@@ -1,5 +1,16 @@
 import { NextResponse } from 'next/server';
 
+// 1. Ini buat Browser (GET Request) - Biar gak 404 pas dibuka
+export async function GET() {
+  return NextResponse.json({
+    status: "success",
+    message: "API TikTok Downloader Ready 🚀",
+    tutorial: "Kirim request POST dengan body { url: 'link_tiktok' }",
+    maintainer: "Rofik"
+  });
+}
+
+// 2. Ini buat API benerannya (POST Request)
 export async function POST(request: Request) {
   try {
     const body = await request.json();
